@@ -17,8 +17,9 @@ dependencies {
     testImplementation(libs.ktor.serverTestHost)
     testImplementation(libs.kotlin.testJunit)
     //
+    implementation(libs.koin.ktor)
+    //
     implementation(libs.ktor.server.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.ktor.server.config.yaml)
 
     implementation("org.jetbrains.exposed:exposed-core:0.43.0")

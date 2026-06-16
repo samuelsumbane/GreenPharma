@@ -1,16 +1,27 @@
 package com.samuelsumbane.greenpharma.features.providers.data
 
 import com.samuelsumbane.greenpharma.model.Provider
+import kotlinx.coroutines.runBlocking
 
 object ProviderRepository {
+    val allProviders = mutableListOf(
+        Provider(id = "ufds", name = "", contact = "", telephone = "", email = "", address = "", true),
+        Provider(id = "ioo", name = "", contact = "", telephone = "", email = "", address = "", true),
+    )
+    fun getAll(): List<Provider> = allProviders
 
-    suspend fun getAll(): List<Provider> {
-        TODO("")
-
+    fun getById(id: String): Provider? {
+        return  allProviders.firstOrNull { it.id == id }
     }
 
-    suspend fun getById(id: Int): Provider {
-        TODO("")
+    fun insertProvider(provider: Provider) {
+        allProviders.add(provider)
     }
 
+//    fun updateProvider(provider: Provider) {
+//        allProviders.g
+//    }
+    fun deleteProvider(provider: Provider) {
+        allProviders.remove(provider)
+    }
 }

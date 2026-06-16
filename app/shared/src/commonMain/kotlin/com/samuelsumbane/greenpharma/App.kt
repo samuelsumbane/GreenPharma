@@ -17,6 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import org.jetbrains.compose.resources.painterResource
 
 import greenpharma.app.shared.generated.resources.Res
+import kotlinx.serialization.Serializable
+
 //import greenpharma.app.shared.generated.resources.compose_multiplatform
 
 @Composable
@@ -47,3 +49,4 @@ fun App() {
         }
     }
 }
+
