@@ -5,8 +5,8 @@ import kotlinx.coroutines.runBlocking
 
 object ProviderRepository {
     val allProviders = mutableListOf(
-        Provider(id = "ufds", name = "", contact = "", telephone = "", email = "", address = "", true),
-        Provider(id = "ioo", name = "", contact = "", telephone = "", email = "", address = "", true),
+        Provider(id = "ufds", name = "fd", contact = "", telephone = "", email = "", address = "", true),
+        Provider(id = "ioo", name = "gdfe", contact = "", telephone = "", email = "", address = "", true),
     )
     fun getAll(): List<Provider> = allProviders
 

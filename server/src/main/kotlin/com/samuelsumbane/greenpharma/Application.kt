@@ -12,6 +12,11 @@ fun main() {
 }
 
 fun Application.module() {
+    configureDI()
+    configureRounting()
+    configureHTTP()
+    configureSerialization()
+
     routing {
         get("/") {
             call.respondText(sayHello("Ktor"))

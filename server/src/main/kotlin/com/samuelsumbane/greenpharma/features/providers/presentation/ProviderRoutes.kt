@@ -19,7 +19,9 @@ fun Route.providerRoutes(service: ProviderService) {
 
         get {
            val allProviders = service.listAllProviders()
-           call.respond(HttpStatusCode.OK, allProviders)
+            val providerResponses = allProviders.map { it.toResponse() }
+            println("all are: $providerResponses")
+           call.respond(HttpStatusCode.OK, providerResponses)
         }
 
         get("{id}") {
