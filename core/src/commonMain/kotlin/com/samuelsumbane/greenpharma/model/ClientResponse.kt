@@ -1,24 +1,10 @@
 package com.samuelsumbane.greenpharma.model
 
 import kotlinx.serialization.Serializable
+import kotlin.random.Random
 
-data class Client(
-    val id: String,
-    val name: String,
-    val telephone: String,
-    val email: String? = null,
-    val birthDay: Long? = null,
-    val genere: Genere,
-    val address: String,
-    val allergies: String,
-    val observations: String,
-    val active: Boolean
-)
-
-
-@Serializable
 data class ClientResponse(
-    val id: String,
+    val id: String = "",
     val name: String,
     val telephone: String,
     val email: String? = null,
@@ -27,11 +13,13 @@ data class ClientResponse(
     val address: String,
     val allergies: String,
     val observations: String,
-    val active: Boolean
+    val active: Boolean = true
 )
 
-fun Client.toResponse() = ClientResponse(
-    id = this.id,
+
+
+fun ClientRequest.toResponse() = ClientResponse(
+    id = "clientfkls ${Random.nextInt()}",
     name = this.name,
     telephone = this.telephone,
     email = this.email,
@@ -40,7 +28,7 @@ fun Client.toResponse() = ClientResponse(
     address = this.address,
     allergies = this.allergies,
     observations = this.observations,
-    active = this.active
+    active = true
 )
 
 
@@ -55,3 +43,5 @@ data class ClientRequest(
     val allergies: String,
     val observations: String,
 )
+
+
